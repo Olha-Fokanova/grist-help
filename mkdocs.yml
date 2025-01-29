@@ -10,153 +10,157 @@ repo_url: "https://github.com/gristlabs/grist-help"
 # (which is confused by them).
 use_directory_urls: !ENV [HTMLPROOFER_OVERRIDE_USE_DIRECTORY_URLS, true]
 
-docs_dir: './help/en/docs' # Add localization folder here for now, we'll handle i18n later
+watch:
+  - ../../overrides
+
+docs_dir: "./help/en/docs" # Add localization folder here for now, we'll handle i18n later
 # windmill is a theme maintained by Grist Labs in https://github.com/gristlabs/mkdocs-windmill
 theme:
-  name: windmill
+  name: material
   custom_dir: overrides
   # Disable the language selector when running in live (so for a specific language)
   disable_language_selector: !ENV [DISABLE_LANGUAGE_SELECTOR, false]
+  logo: images/logo.png
 nav:
   - index.md
   - FAQ.md
   - How-to tutorials:
-    - lightweight-crm.md
-    - investment-research.md
-    - afterschool-program.md
+      - lightweight-crm.md
+      - investment-research.md
+      - afterschool-program.md
   - Managing documents:
-    - creating-doc.md
-    - sharing.md
-    - copying-docs.md
-    - imports.md
-    - exports.md
-    - automatic-backups.md
-    - document-history.md
-    - workspaces.md
+      - creating-doc.md
+      - sharing.md
+      - copying-docs.md
+      - imports.md
+      - exports.md
+      - automatic-backups.md
+      - document-history.md
+      - workspaces.md
   - Pages and tables:
-    - enter-data.md
-    - page-widgets.md
-    - raw-data.md
-    - search-sort-filter.md
-    - widget-table.md
-    - widget-card.md
-    - widget-form.md
-    - widget-chart.md
-    - widget-calendar.md
-    - widget-custom.md
-    - linking-widgets.md
-    - custom-layouts.md
-    - record-cards.md
-    - summary-tables.md
-    - on-demand-tables.md
+      - enter-data.md
+      - page-widgets.md
+      - raw-data.md
+      - search-sort-filter.md
+      - widget-table.md
+      - widget-card.md
+      - widget-form.md
+      - widget-chart.md
+      - widget-calendar.md
+      - widget-custom.md
+      - linking-widgets.md
+      - custom-layouts.md
+      - record-cards.md
+      - summary-tables.md
+      - on-demand-tables.md
   - Columns and data types:
-    - col-types.md
-    - col-refs.md
-    - conditional-formatting.md
-    - timestamps.md
-    - authorship.md
-    - col-transform.md
+      - col-types.md
+      - col-refs.md
+      - conditional-formatting.md
+      - timestamps.md
+      - authorship.md
+      - col-transform.md
   - Using formulas:
-    - formulas.md
-    - references-lookups.md
-    - dates.md
-    - formula-timer.md
-    - python.md
-    - functions.md
-    - formula-cheat-sheet.md
+      - formulas.md
+      - references-lookups.md
+      - dates.md
+      - formula-timer.md
+      - python.md
+      - functions.md
+      - formula-cheat-sheet.md
   - AI Formula Assistant:
-    - ai-assistant.md
+      - ai-assistant.md
   - Team sites:
-    - teams.md
-    - team-sharing.md
+      - teams.md
+      - team-sharing.md
   - Access rules:
-    - access-rules.md
+      - access-rules.md
   - Integrations:
-    - rest-api.md
-    - api.md
-    - integrators.md
-    - embedding.md
-    - webhooks.md
-    - Plugin API:
-      - code/README.md
-      - code/modules/grist_plugin_api.md
-      - ... | flat | **/code/interfaces/**
-      - ... | flat | **/code/modules/**
+      - rest-api.md
+      - api.md
+      - integrators.md
+      - embedding.md
+      - webhooks.md
+      - Plugin API:
+          - code/README.md
+          - code/modules/grist_plugin_api.md
+          - ... | flat | **/code/interfaces/**
+          - ... | flat | **/code/modules/**
   - Self-managed:
-    - self-managed.md
-    - install/saml.md
-    - install/oidc.md
-    - install/scim.md
-    - install/forwarded-headers.md
-    - install/cloud-storage.md
-    - install/grist-connect.md
-    - install/grist-builder-edition.md
-    - Audit logs:
-      - install/audit-log-overview.md
-      - install/audit-log-streaming.md
-      - install/audit-log-events.md
-    - Telemetry:
-      - telemetry.md
-      - telemetry-limited.md
-      - telemetry-full.md
+      - self-managed.md
+      - install/saml.md
+      - install/oidc.md
+      - install/scim.md
+      - install/forwarded-headers.md
+      - install/cloud-storage.md
+      - install/grist-connect.md
+      - install/grist-builder-edition.md
+      - Audit logs:
+          - install/audit-log-overview.md
+          - install/audit-log-streaming.md
+          - install/audit-log-events.md
+      - Telemetry:
+          - telemetry.md
+          - telemetry-limited.md
+          - telemetry-full.md
   - News & updates:
-    - newsletters.md
-    - newsletters/2024-12.md
-    - newsletters/2024-11.md
-    - newsletters/2024-10.md
-    - newsletters/2024-09.md
-    - newsletters/2024-08.md
-    - newsletters/2024-07.md
-    - newsletters/2024-06.md
-    - newsletters/2024-05.md
-    - newsletters/2024-04.md
-    - newsletters/2024-03.md
-    - newsletters/2024-02.md
-    - newsletters/2024-01.md
-    - newsletters/2023-12.md
-    - newsletters/2023-11.md
-    - newsletters/2023-10.md
-    - newsletters/2023-09.md
-    - newsletters/2023-08.md
-    - newsletters/2023-07.md
-    - newsletters/2023-06.md
-    - newsletters/2023-05.md
-    - newsletters/2023-04.md
-    - newsletters/2023-03.md
-    - newsletters/2023-02.md
-    - newsletters/2023-01.md
-    - newsletters/2022-12.md
-    - newsletters/2022-11.md
-    - newsletters/2022-10.md
-    - newsletters/2022-09.md
-    - newsletters/2022-08.md
-    - newsletters/2022-07.md
-    - newsletters/2022-06.md
-    - newsletters/2022-05.md
-    - newsletters/2022-04.md
-    - newsletters/2022-03.md
-    - newsletters/2022-02.md
-    - newsletters/2022-01.md
-    - newsletters/2021-12.md
-    - newsletters/2021-11.md
-    - newsletters/2021-10.md
-    - newsletters/2021-09.md
-    - newsletters/2021-08.md
-    - newsletters/2021-07.md
-    - newsletters/2021-06.md
-    - newsletters/2021-05.md
-    - newsletters/2021-04.md
-    - newsletters/2021-03.md
-    - newsletters/2021-02.md
-    - newsletters/2021-01.md
-    - newsletters/2020-12.md
-    - newsletters/2020-11.md
-    - newsletters/2020-10.md
-    - newsletters/2020-09.md
-    - newsletters/2020-08.md
-    - newsletters/2020-07.md
-    - newsletters/2020-06.md
-    - newsletters/2020-05.md
+      - newsletters.md
+      - newsletters/2024-12.md
+      - newsletters/2024-11.md
+      - newsletters/2024-10.md
+      - newsletters/2024-09.md
+      - newsletters/2024-08.md
+      - newsletters/2024-07.md
+      - newsletters/2024-06.md
+      - newsletters/2024-05.md
+      - newsletters/2024-04.md
+      - newsletters/2024-03.md
+      - newsletters/2024-02.md
+      - newsletters/2024-01.md
+      - newsletters/2023-12.md
+      - newsletters/2023-11.md
+      - newsletters/2023-10.md
+      - newsletters/2023-09.md
+      - newsletters/2023-08.md
+      - newsletters/2023-07.md
+      - newsletters/2023-06.md
+      - newsletters/2023-05.md
+      - newsletters/2023-04.md
+      - newsletters/2023-03.md
+      - newsletters/2023-02.md
+      - newsletters/2023-01.md
+      - newsletters/2022-12.md
+      - newsletters/2022-11.md
+      - newsletters/2022-10.md
+      - newsletters/2022-09.md
+      - newsletters/2022-08.md
+      - newsletters/2022-07.md
+      - newsletters/2022-06.md
+      - newsletters/2022-05.md
+      - newsletters/2022-04.md
+      - newsletters/2022-03.md
+      - newsletters/2022-02.md
+      - newsletters/2022-01.md
+      - newsletters/2021-12.md
+      - newsletters/2021-11.md
+      - newsletters/2021-10.md
+      - newsletters/2021-09.md
+      - newsletters/2021-08.md
+      - newsletters/2021-07.md
+      - newsletters/2021-06.md
+      - newsletters/2021-05.md
+      - newsletters/2021-04.md
+      - newsletters/2021-03.md
+      - newsletters/2021-02.md
+      - newsletters/2021-01.md
+      - newsletters/2020-12.md
+      - newsletters/2020-11.md
+      - newsletters/2020-10.md
+      - newsletters/2020-09.md
+      - newsletters/2020-08.md
+      - newsletters/2020-07.md
+      - newsletters/2020-06.md
+      - newsletters/2020-05.md
   - More examples:
       - examples.md
       - examples/2020-06-credit-card.md
@@ -176,35 +180,37 @@ nav:
       - examples/2023-01-acl-memo.md
       - examples/2023-07-proposals-contracts.md
   - Reference:
-    - keyboard-shortcuts.md
-    # The function reference (functions.md) is listed above; here is an intentionally non-standard
-    # link, so that only the above page item gets highlighted when the function reference is open.
-    # TODO: this needs a special way to localize the nav entry, perhaps similar to section titles.
-    - Function reference: /functions/
-    - limits.md
-    - data-security.md
-    - browser-support.md
-    - glossary.md
+      - keyboard-shortcuts.md
+      # The function reference (functions.md) is listed above; here is an intentionally non-standard
+      # link, so that only the above page item gets highlighted when the function reference is open.
+      # TODO: this needs a special way to localize the nav entry, perhaps similar to section titles.
+      - Function reference: /functions/
+      - limits.md
+      - data-security.md
+      - browser-support.md
+      - glossary.md
 
 extra:
-  logo: 'images/logo.png'
+  logo: "images/logo.png"
   palette:
-    primary: 'blue grey'
-    accent: 'orange'
+    primary: "blue grey"
+    accent: "orange"
   font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-  homepage: '/help'
-  version: '1.0.2-dev'
+    text: "Roboto"
+    code: "Roboto Mono"
+  homepage: "/"
+  version: "1.0.2-dev"
   article_nav_bottom: false
   history_buttons: false
   home_links:
+    - href: /
+      text: "Get Started"
     - href: https://community.getgrist.com
-      text: 'Community'
+      text: "Community"
     - href: https://www.getgrist.com
-      text: 'Back to Grist'
+      text: "Back to Grist"
       hide_on_small_screen: true
-  google_tag_manager: 'GTM-5FDHKQ9'
+  google_tag_manager: "GTM-5FDHKQ9"
 extra_css:
   - css/grist.css
 extra_javascript:
@@ -219,11 +225,11 @@ plugins:
   - meta-descriptions
   - redirects:
       redirect_maps:
-        'install/aws-marketplace.md': 'install/grist-builder-edition.md'
+        "install/aws-marketplace.md": "install/grist-builder-edition.md"
 
 markdown_extensions:
   toc:
-      permalink: '#'
+    permalink: "#"
   admonition: {}
   smarty: {}
   extra: {}
@@ -231,4 +237,4 @@ markdown_extensions:
   attr_list: {}
 
 hooks:
-- ../../mkdocs-utils/hooks.py
+  - ../../mkdocs-utils/hooks.py
