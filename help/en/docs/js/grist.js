@@ -4,17 +4,19 @@
 // When loading a page with #hash in the URL, if #hash refers to a <detail> element, expand the
 // detail, and collapse other details.
 function expandSelected() {
-  var hash = window.location.hash.split('/').slice(-1)[0];
+  var hash = window.location.hash.split("/").slice(-1)[0];
   var elem = hash ? document.querySelector(hash) : null;
-  if (!elem) { return; }
-  var closestExpandableElem = elem.closest('details');
+  if (!elem) {
+    return;
+  }
+  var closestExpandableElem = elem.closest("details");
 
   if (!closestExpandableElem) {
     return;
   }
 
-  for (var el of document.querySelectorAll('details')) {
-    el.open = (el === closestExpandableElem);
+  for (var el of document.querySelectorAll("details")) {
+    el.open = el === closestExpandableElem;
   }
 
   // After collapsing other details, the scroll position may be off, so fix it now.
@@ -23,15 +25,31 @@ function expandSelected() {
 
 // Function to get and auto play YouTube video from data tag.
 // From https://stackoverflow.com/a/23629470/328565
-function autoPlayYouTubeModal(){
-  $('body').on('click', '[data-toggle="modal"][data-theVideo]', function() {
-    var theModal = $(this).data("target");
-    var videoSRC = $(this).attr("data-theVideo");
-    $(theModal).find('iframe').attr('src', videoSRC + "?rel=0&autoplay=1");
-    $(theModal).on('hidden.bs.modal', function(e) {
-      $(theModal).find('iframe').attr('src', '');
+function autoPlayYouTubeModal() {
+  for (let modal of document.querySelectorAll(
+    '[data-toggle="modal"][data-theVideo]'
+  )) {
+    modal.addEventListener("click", function (event) {
+      const element = event.currentTarget;
+      const theModal = element.dataset.target;
+      const videoSRC = element.dataset.thevideo;
+      let iframe = document.querySelector(theModal).querySelector("iframe");
+      iframe.setAttribute("src", videoSRC + "?rel=0&autoplay=1");
+      iframe.addEventListener("hidden.bs.modal", function (event) {
+        iframe.setAttribute("src", "");
+      });
     });
-  });
+  }
+  // $("body").on("click", '[data-toggle="modal"][data-theVideo]', function () {
+  //   var theModal = $(this).data("target");
+  //   var videoSRC = $(this).attr("data-theVideo");
+  //   $(theModal)
+  //     .find("iframe")
+  //     .attr("src", videoSRC + "?rel=0&autoplay=1");
+  //   $(theModal).on("hidden.bs.modal", function (e) {
+  //     $(theModal).find("iframe").attr("src", "");
+  //   });
+  // });
 }
 
 function getYouTubeIframes() {
@@ -45,16 +63,20 @@ function maybeSetUpYouTubeAPI() {
   const youtubeIframes = getYouTubeIframes();
   if (youtubeIframes.length > 1) {
     // If so, update YouTube links to enable JS API.
-    youtubeIframes.forEach(iframe => {
-      if (!iframe.src.includes('enablejsapi=')) {
-        iframe.src += '&enablejsapi=1&origin=' + location.origin;
+    youtubeIframes.forEach((iframe) => {
+      if (!iframe.src.includes("enablejsapi=")) {
+        iframe.src += "&enablejsapi=1&origin=" + location.origin;
       }
     });
 
     // If there isn't yet a YouTube script tag, add one.
-    if (!document.querySelector('script[href^="https://www.youtube.com/iframe_api"]')) {
-      const elem = document.createElement('script');
-      elem.setAttribute('src', "https://www.youtube.com/iframe_api");
+    if (
+      !document.querySelector(
+        'script[href^="https://www.youtube.com/iframe_api"]'
+      )
+    ) {
+      const elem = document.createElement("script");
+      elem.setAttribute("src", "https://www.youtube.com/iframe_api");
       document.head.appendChild(elem);
     }
   }
@@ -77,18 +99,18 @@ function onYouTubeIframeAPIReady() {
     }
   }
 
-  getYouTubeIframes().forEach(iframe => {
+  getYouTubeIframes().forEach((iframe) => {
     const player = new YT.Player(iframe, {
       events: {
         onStateChange: (ev) => onStateChange(player, ev),
-      }
+      },
     });
   });
 }
 
-window.onload = function() {
+window.onload = function () {
   expandSelected();
   autoPlayYouTubeModal();
   maybeSetUpYouTubeAPI();
 };
-window.addEventListener('popstate', expandSelected);
+window.addEventListener("popstate", expandSelected);
