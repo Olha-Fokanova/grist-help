@@ -237,6 +237,7 @@ plugins:
 markdown_extensions:
   toc:
     permalink: "#"
+    title: In this guide
   admonition: {}
   smarty: {}
   extra: {}
