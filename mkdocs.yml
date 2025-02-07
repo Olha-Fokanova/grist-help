@@ -21,6 +21,9 @@ theme:
   # Disable the language selector when running in live (so for a specific language)
   disable_language_selector: !ENV [DISABLE_LANGUAGE_SELECTOR, false]
   logo: images/logo.png
+  font:
+    text: "Rubik"
+    code: "Rubik Mono One"
 nav:
   - index.md
   - FAQ.md
@@ -195,9 +198,9 @@ extra:
   palette:
     primary: "blue grey"
     accent: "orange"
-  font:
-    text: "Roboto"
-    code: "Roboto Mono"
+#  font:
+#    text: "Roboto"
+#    code: "Roboto Mono"
   homepage: "/"
   version: "1.0.2-dev"
   article_nav_bottom: false
