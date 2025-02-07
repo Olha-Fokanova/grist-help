@@ -1,12 +1,57 @@
+.clearfix:before {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear:both;
+}
+.clearfix + div {
+  clear: both;
+}
+
+:root > * {
+  /* Grist palette */
+  --color-link: #16B378;
+  --color-light-grey: #F7F7F7;
+  --color-medium-grey: #E8E8E8;
+  --color-dark: #262633;
+  --color-light: #FFFFFF;
+  --color-slate: #929299;
+  --color-light-green: #16B378;
+  --color-dark-green: #009058;
+  --color-dark-text: #494949;
+
+  --md-default-fg-color:               var(--color-link);
+  --md-default-fg-color--light:        var(--color-dark);
+}
+
+.md-typeset p {
+  font-size: .65rem;
+}
+
+@media screen and (min-width: 60em) {
+  .md-sidebar {
+    width: 240px;
+  }
+}
+
+.md-sidebar.md-sidebar--secondary .md-sidebar__inner {
+  padding: 24px 16px;
+}
+
 .md-header {
   background-color: white;
-  border: 1px solid #E8E8E8;
+  border: 1px solid var(--color-medium-grey);
   color: var(--color-dark-text);
 }
 
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
   height: initial;
+}
+
+.md-header__title {
+  font-size: .9rem;
 }
 
 .md-header__title .md-header__ellipsis .md-ellipsis:first-child {
@@ -44,6 +89,7 @@
   display: flex;
   align-items: center;
   padding: 0 24px;
+  font-size: .7rem;
 }
 
 .md-header__link:focus,
@@ -63,13 +109,66 @@
   .md-search__inner {
     width: 280px;
   }
+  [dir=ltr] .md-nav--secondary .md-nav__list {
+    padding: 0;
+  }
+  [dir=ltr] .md-nav--secondary .md-nav__item>.md-nav__link {
+    margin: 0;
+  }
+}
+
+.md-search__inner {
+  margin-left: 12px;
 }
 
 .md-search__form {
   border-radius: 3px;
-  margin-left: 12px;
 }
 
+.md-nav__link[for]:focus,
+.md-nav__link[for]:hover,
+.md-nav__link[href]:focus,
+.md-nav__link[href]:hover {
+  color: var(--color-dark-text);
+  font-weight: 500;
+  background-color: var(--color-medium-grey);
+  border-radius: 4px;
+}
+
+.md-nav__item .md-nav__link--active, .md-nav__item .md-nav__link--active code {
+  /*color: var(--md-typeset-a-color);*/
+  color: var(--color-dark-green);
+}
+
+.md-sidebar.md-sidebar--secondary .md-sidebar__inner {
+  background-color: var(--color-light-grey);
+  border-radius: 8px;
+}
+.md-nav__list {
+  padding: 0;
+}
+
+.md-nav__item a {
+  padding: 4px 8px;
+  font-size: .65rem;
+  line-height: 1rem;
+}
+
+.md-nav__title {
+  font-size: .8rem;
+  line-height: 1.2rem;
+}
+
+.md-nav--secondary .md-nav__title {
+  padding: 0 0 8px 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/*.md-sidebar .md-nav__link--active {
+  color: var(--color-dark-text);
+  font-weight: 500;
+}*/
 
 .grist-icon {
   mask-image: var(--icon);
@@ -310,8 +409,8 @@
 
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 15px;
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
+  /*font-size: 20px;*/
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
