@@ -9,6 +9,68 @@
   clear: both;
 }
 
+.grist-landing-container {
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 170px 0 170px;
+  width: 100%;
+}
+.grist-hero {
+  padding-top: 40px;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--color-light-green);
+}
+.grist-hero-img {
+  height: 237px;
+}
+.grist-navs {
+  padding-top: 32px;
+  padding-bottom: 56px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  background: linear-gradient(to bottom, var(--color-light-green) 40% 60%, var(--color-light-grey) 60%);
+}
+.grist-navs > .grist-landing-container {
+  height: 265px;
+  align-items: center;
+}
+.grist-nav {
+  display: flex;
+}
+.grist-nav-card {
+  border-radius: 12px;
+  padding: 24px;
+  width: 245px;
+  height: 251px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 4px 4px 6px 0px #00000026;
+}
+.grist-nav-card:hover{
+  height: 265px;
+  box-shadow: 2px 2px 6px 0px #00000026;
+}
+.grist-nav-icon {
+  border-radius: 8px;
+}
+
+.grist-landing-cards {
+  width: 1100px;
+  position: relative;
+}
+.grist-landing-card {
+  width: 340px;
+}
+.grist-landing-card:first-child > p {
+  top: 104px;
+  left: 38px;
+  position: absolute;
+}
+
 :root > * {
   /* Grist palette */
   --color-link: #16B378;
@@ -21,6 +83,7 @@
   --color-dark-green: #009058;
   --color-dark-text: #494949;
 
+  --md-default-fg-color:               var(--color-link);
   --md-default-fg-color:               var(--color-link);
   --md-default-fg-color--light:        var(--color-dark);
 }

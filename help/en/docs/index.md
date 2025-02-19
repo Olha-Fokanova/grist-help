@@ -1,5 +1,6 @@
 ---
 title: Welcome to Grist
+template: home.html
 ---
 
 # Welcome to Grist! {: data-toc-label='' }

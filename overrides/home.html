@@ -1,0 +1,95 @@
+{#-
+This file was automatically generated - do not edit
+-#}
+{% extends "main.html" %}
+
+{% block header %}
+    {% include "partials/header-home.html" %}
+{% endblock %}
+
+{% block hero %}
+<div class="grist-hero">
+    <div class="grist-landing-container">
+        <div>
+            <h1>Welcome! How can we help you?</h1>
+            <div>
+                {#
+                {% if "material/search" in config.plugins %}
+                <label class="md-header__button md-icon" for="__search">
+                    {% set icon = config.theme.icon.search or "material/magnify" %}
+                    {% include ".icons/" ~ icon ~ ".svg" %}
+                </label>
+                {% include "partials/search.html" %}
+                {% endif %}
+                #}
+            </div>
+            <p>
+                Explore tutorials, docs, guides, videos, and more to learn how to get the most out of Grist.
+            </p>
+        </div>
+        <img class="grist-hero-img" src="/images/NEW/Group 265.svg" alt="Hero image">
+    </div>
+</div>
+
+<div class="grist-navs">
+    <div class="grist-landing-container">
+        <a class="grist-nav">
+            <div class="grist-nav-card">
+                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-1.png">
+                <h3>Get Started</h3>
+                <p>New to Grist? Start here with our step-by-step intro to all of the essentials</p>
+            </div>
+        </a>
+        <a class="grist-nav">
+            <div class="grist-nav-card">
+                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-2.png">
+                <h3>Learn More</h3>
+                <p>Explore tutorials, videos, and more to see Grist at its most powerful</p>
+            </div>
+        </a>
+        <a class="grist-nav">
+            <div class="grist-nav-card">
+                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-3.png">
+                <h3>Support Doc</h3>
+                <p>Learn more about Grist’s powerful features with our support docs</p>
+            </div>
+        </a>
+        <a class="grist-nav">
+            <div class="grist-nav-card">
+                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-4.png">
+                <h3>Technical doc</h3>
+                <p>Take Grist to the next level with APIs and self-hosted instances</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="grist-landing-container">
+    ### Featured Tutorials
+    Start building fast with these step-by-step tutorials
+    <div class="col-md-4 grist-landing-card">
+
+        <img alt="Card 1" src="images/NEW/card-1.png"/>
+        <p class="1" markdown="1">
+
+            [Create a custom CRM](lightweight-crm.md). Using the "Lightweight CRM" example, learn to link data, and create high-productivity layouts.
+
+        </p>
+
+    </div>
+    <div class="col-md-4 grist-landing-card" markdown="1">
+
+        <img alt="Card 2" src="images/NEW/card-2.png"/>
+        [Analyze and visualize data](investment-research.md). Using the "Investment Research" example, learn to create summary tables and charts, and link charts dynamically.
+
+    </div>
+    <div class="col-md-4 grist-landing-card" markdown="1">
+
+        <img alt="Card 3" src="images/NEW/card-3.png"/>
+        [Managing business data](afterschool-program.md). Using the "Afterschool Program" example, learn to model business data, use formulas, and manage complexity.
+    </div>
+</div>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block site_nav %}{% endblock %}
+{% block footer %}{% endblock %}
