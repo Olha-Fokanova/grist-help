@@ -8,10 +8,10 @@ This file was automatically generated - do not edit
 {% endblock %}
 
 {% block hero %}
-<div class="grist-hero">
-    <div class="grist-landing-container">
+<div class="landing__green">
+    <div class="landing--hero landing--container__inner">
         <div>
-            <h1>Welcome! How can we help you?</h1>
+            <h2 class="hero--title">Welcome! How can we help you?</h2>
             <div>
                 {#
                 {% if "material/search" in config.plugins %}
@@ -23,73 +23,115 @@ This file was automatically generated - do not edit
                 {% endif %}
                 #}
             </div>
-            <p>
+            <p class="hero--text">
                 Explore tutorials, docs, guides, videos, and more to learn how to get the most out of Grist.
             </p>
         </div>
-        <img class="grist-hero-img" src="/images/NEW/Group 265.svg" alt="Hero image">
+        <img class="landing--hero-img" src="/images/assets/hero.png" alt="Hero image">
     </div>
 </div>
 
-<div class="grist-navs">
-    <div class="grist-landing-container">
-        <a class="grist-nav">
-            <div class="grist-nav-card">
-                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-1.png">
-                <h3>Get Started</h3>
-                <p>New to Grist? Start here with our step-by-step intro to all of the essentials</p>
-            </div>
-        </a>
-        <a class="grist-nav">
-            <div class="grist-nav-card">
-                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-2.png">
-                <h3>Learn More</h3>
-                <p>Explore tutorials, videos, and more to see Grist at its most powerful</p>
-            </div>
-        </a>
-        <a class="grist-nav">
-            <div class="grist-nav-card">
-                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-3.png">
-                <h3>Support Doc</h3>
-                <p>Learn more about Grist’s powerful features with our support docs</p>
-            </div>
-        </a>
-        <a class="grist-nav">
-            <div class="grist-nav-card">
-                <img class="grist-nav-icon" alt="Nav Icon" src="/images/NEW/nav-icon-4.png">
-                <h3>Technical doc</h3>
-                <p>Take Grist to the next level with APIs and self-hosted instances</p>
-            </div>
-        </a>
+<div class="landing__gradient">
+    <div class="nav landing--container__inner">
+        <div class="nav__inner">
+            <a class="nav--item">
+                <img class="nav--img" alt="Nav Icon" src="/images/assets/nav-icon-1.png">
+                <h3 class="nav--item__accent">Get Started</h3>
+                <p class="nav--item__default">New to Grist? Start here with our step-by-step intro to all of the essentials</p>
+            </a>
+            <a class="nav--item">
+                <img class="nav--img" alt="Nav Icon" src="/images/assets/nav-icon-2.png">
+                <h3 class="nav--item__accent">Learn More</h3>
+                <p class="nav--item__default">Explore tutorials, videos, and more to see Grist at its most powerful</p>
+            </a>
+            <a class="nav--item">
+                <img class="nav--img" alt="Nav Icon" src="/images/assets/nav-icon-3.png">
+                <h3 class="nav--item__accent">Support Doc</h3>
+                <p class="nav--item__default">Learn more about Grist’s powerful features with our support docs</p>
+            </a>
+            <a class="nav--item">
+                <img class="nav--img" alt="Nav Icon" src="/images/assets/nav-icon-4.png">
+                <h3 class="nav--item__accent">Technical doc</h3>
+                <p class="nav--item__default">Take Grist to the next level with APIs and self-hosted instances</p>
+            </a>
+        </div>
     </div>
 </div>
 
-<div class="grist-landing-container">
-    ### Featured Tutorials
-    Start building fast with these step-by-step tutorials
-    <div class="col-md-4 grist-landing-card">
+<div class="tutorials">
+    <div class="container__vertical landing--container__inner">
 
-        <img alt="Card 1" src="images/NEW/card-1.png"/>
-        <p class="1" markdown="1">
+        <div>
+            <h2 class="landing--accent">Featured Tutorials</h2>
 
-            [Create a custom CRM](lightweight-crm.md). Using the "Lightweight CRM" example, learn to link data, and create high-productivity layouts.
+            <p class="landing--default">Start building fast with these step-by-step tutorials</p>
+        </div>
 
-        </p>
-
+        <div class="items__spaced">
+            {# TODO resolve markdown files as routes instead of hardlinking #}
+            <a class="tutorial--item" href="/lightweight-crm/">
+                <img class="tutorial--item-img" alt="Card 1" src="/images/assets/card-1.png"/>
+                <div>
+                    <h3>Create a custom CRM</h3>
+                    <p>Using the "Lightweight CRM" example, learn to link data, and create high-productivity layouts.</p>
+                    <img src="/images/assets/arrow-right.png" alt="Go">
+                </div>
+            </a>
+            <a class="tutorial--item" href="/investment-research/">
+                <img class="tutorial--item-img" alt="Card 2" src="/images/assets/card-2.png"/>
+                <div>
+                    <h3>Managing business data</h3>
+                    <p>Using the "Afterschool Program" example, learn to model business data, use formulas, and manage complexity.</p>
+                    <img src="/images/assets/arrow-right.png" alt="Go">
+                </div>
+            </a>
+            <a class="tutorial--item" href="/afterschool-program/">
+                <img class="tutorial--item-img" alt="Card 3" src="/images/assets/card-3.png"/>
+                <div>
+                    <h3>Analyze and visualize data</h3>
+                    <p>Using the "Investment Research" example, learn to create summary tables and charts, and link charts dynamically.</p>
+                    <img src="/images/assets/arrow-right.png" alt="Go">
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="col-md-4 grist-landing-card" markdown="1">
+</div>
 
-        <img alt="Card 2" src="images/NEW/card-2.png"/>
-        [Analyze and visualize data](investment-research.md). Using the "Investment Research" example, learn to create summary tables and charts, and link charts dynamically.
+<div class="resources">
+    <div class="container__vertical landing--container__inner">
+        <div>
+            <h2 class="landing--accent">More Support Resources</h2>
 
-    </div>
-    <div class="col-md-4 grist-landing-card" markdown="1">
+            <p class="landing--default">Looking for more help? Connect with Grist’s supportive user community, or contact our team.</p>
+        </div>
 
-        <img alt="Card 3" src="images/NEW/card-3.png"/>
-        [Managing business data](afterschool-program.md). Using the "Afterschool Program" example, learn to model business data, use formulas, and manage complexity.
+        <div class="items__spaced container__horizonal">
+            <a class="resources--item">
+                <img src="/images/assets/community.png" alt="Resource: community">
+                <h3 class="landing--accent">Join the community</h3>
+                <p class="landing--default">Connect with other members of the Grist community and our team</p>
+            </a>
+            <a class="resources--item">
+                <img src="/images/assets/discord.png" alt="Resource: discord">
+                <h3 class="landing--accent">Chat on Discord</h3>
+                <p class="landing--default">Connect with other members of the Grist community and our team</p>
+            </a>
+            <a class="resources--item">
+                <img src="/images/assets/envelop.png" alt="Resource: contact support">
+                <h3 class="landing--accent">Contact Support</h3>
+                <p class="landing--default">Connect with other members of the Grist community and our team</p>
+            </a>
+        </div>
     </div>
 </div>
 {% endblock %}
+
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ 'css/landing.css' | url }}">
+{% endblock %}
+
 {% block content %}{% endblock %}
 {% block site_nav %}{% endblock %}
 {% block footer %}{% endblock %}
