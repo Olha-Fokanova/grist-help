@@ -13,7 +13,7 @@ This file was automatically generated - do not edit
         <div>
             <h2 class="hero--title">Welcome! How can we help you?</h2>
             <div>
-                {#
+                {# @TODO fix search
                 {% if "material/search" in config.plugins %}
                 <label class="md-header__button md-icon" for="__search">
                     {% set icon = config.theme.icon.search or "material/magnify" %}
@@ -128,8 +128,8 @@ This file was automatically generated - do not edit
 
 
 {% block styles %}
-{{ super() }}
 <link rel="stylesheet" href="{{ 'css/landing.css' | url }}">
+{{ super() }}
 {% endblock %}
 
 {% block content %}{% endblock %}
